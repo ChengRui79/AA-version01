@@ -1,0 +1,74 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+
+<!--<head>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="">-->
+
+<!--    <title>团员加入</title>-->
+<!--    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+<!--    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Custom styles for this template &ndash;&gt;-->
+<!--    <link href="/asserts/css/dashboard.css" rel="stylesheet">-->
+
+
+<!--</head>-->
+<!--<body>-->
+<!--<div th:replace="~{common/common::topbar}"></div>-->
+
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div th:replace="~{common/common::sidebar(active='addgrplist.html')}"></div>-->
+
+<!--        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">-->
+<!--            <h2 class="" style="color:black">正在申请加入</h2>-->
+<!--            <form th:action="@{/mem}" method="post">-->
+
+<!--                <div class="templatemo_textbox"><input name="memid" type="text" class="form-control" id="memid" placeholder="你的编号" required></div>-->
+<!--                <br><br>-->
+<!--                <div class="templatemo_textbox"><input name="memname" type="text" class="form-control" id="memname" placeholder="你的姓名" required></div>-->
+<!--                <br><br>-->
+<!--                <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="gender" value="男">-->
+<!--                    <label class="form-check-label">男</label></div>-->
+<!--                <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="gender" value="女">-->
+<!--                    <label class="form-check-label">女</label></div>-->
+<!--                <br><br>-->
+<!--                <div class="templatemo_textbox"><input name="grpname" type="text" class="form-control" id="grpname" placeholder="你的团队名称 " required></div>-->
+<!--                <div class="clear"></div><br>-->
+
+<!--                <button type="submit" class="btn btn-primary">申请加入</button><br><br><br>-->
+
+<!--            </form>-->
+
+<!--            <form th:action="@{/addmem}" method="post">-->
+<!--            <div class="table-responsive">-->
+<!--                <table class="table table-striped table-responsive-lg<th><h6><b>">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th><h6><b>团队编号</b></h6></th>-->
+<!--                        <th><h6><b>团队名称</b></h6></th>-->
+<!--                        <th><h6><b>活动地点</b></h6></th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    <tr th:each="mem:${addmems}">-->
+<!--                        <td th:text="${mem.getGroupid()}"></td>-->
+<!--                        <td th:text="${mem.getGroupname()}"></td>-->
+<!--                        <td th:text="${mem.getGrouplocation()}"></td>-->
+
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--            </form>-->
+<!--        </main>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>创建团队</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--<div th:insert="~{welcome::topbar}"></div>-->
+<div th:replace="~{common/common::topbar}"></div>
+
+
+<div class="container-fluid">
+    <div class="row">
+<!--        <div th:insert="~{welcome::sidebar}"></div>-->
+        <div th:replace="~{common/common::sidebar(active='list.html')}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" >
+            <h3><a class="btn btn-xs btn-success" th:href="@{/grp}" >创建团</a></h3>
+            <font color="black" size="4.5px" ><center><b>已创建的团队信息</b></center></font>
+            <div class="table-responsive">
+                <table class="table table-striped table-responsive-lg">
+                    <thead>
+                    <tr>
+                        <th><h6><b>团队编号</b></h6></th>
+                        <th><h6><b>队长姓名</b></h6></th>
+                        <th><h6><b>团队名称</b></h6></th>
+                        <th><h6><b>活动地点</b></h6></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="grp:${grps}">
+                        <td th:text="${grp.getGroupid()}"></td>
+                        <td th:text="${grp.getLeader()}"></td>
+                        <td th:text="${grp.getGroupname()}"></td>
+                        <td th:text="${grp.getGrouplocation()}"></td>
+<!--                        <td>-->
+<!--                            <a class="btn btn-sm btn-primary" th:href="@{/grp/}+${grp.getGroupid()}">编辑</a>-->
+<!--                            <a class="btn btn-sm btn-danger" th:href="@{/delgrp/}+${grp.getGroupid()}">删除</a>-->
+<!--                        </td>-->
+                    </tr>
+<!--                    <h6 style="color: red">（编辑、删除操作仅限网页管理员）</h6>-->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js"></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+
+</html>
+

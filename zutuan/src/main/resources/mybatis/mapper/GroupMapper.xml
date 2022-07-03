@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javaee.zutuan.mapper.GroupMapper">
+    <select id="queryGroupById" resultType="Group">
+        select *from tuan where groupid = #{groupid}
+    </select>
+    <select id="queryAllGroup" resultType="Group">
+        select * from tuan
+    </select>
+
+    <select id="queryGroupsByLeader" resultType="Group">
+        select * from tuan where leader = #{leader}
+    </select>
+
+    <insert id="addGroup" parameterType="Group">
+        insert into tuan (groupid,leader,groupname,grouplocation,events) values (#{groupid},#{leader},#{groupname},#{grouplocation},#{events})
+    </insert>
+
+    <update id="updateGroup" parameterType="Group">
+        update tuan set groupname=#{groupname},grouplocation=#{grouplocation} where groupid=#{groupid}
+    </update>
+
+    <delete id="deleteGroup" parameterType="int">
+        delete from tuan where groupid = #{groupid}
+    </delete>
+
+    <select id="queryGroupNameById" resultType="Group">
+        select groupname from tuan where groupid = #{groupid}
+    </select>
+</mapper>

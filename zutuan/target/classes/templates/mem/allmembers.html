@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>加入团队</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="~{common/common::topbar}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{common/common::sidebar(active='addgrplist.html')}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="table-responsive">
+                <table class="table table-striped table-responsive-lg">
+                    <thead>
+                    <tr>
+                        <th><h6><b>团队编号</b></h6></th>
+                        <th><h6><b>姓名</b></h6></th>
+                        <th><h6><b>团队</b></h6></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="mem:${mems}">
+                        <td th:text="${mem.getMemid()}"></td>
+                        <td th:text="${mem.getMemname()}"></td>
+                        <td th:text="${mem.getGrpname()}"></td>
+                    </tr>
+                    <h6 style="color: blue">以下为所有已加入团人员的信息</h6>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js"></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+
+</html>
+

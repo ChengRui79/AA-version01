@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>具体活动</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="~{common/common::topbar}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{common/common::sidebar(active='addgrplist.html')}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <!--            <h3><a class="btn btn-sm btn-success" th:href="@{/mem}">加入团队</a></h3>-->
+            <div class="table-responsive">
+                <table class="table table-striped table-responsive-lg">
+                    <thead>
+                    <tr>
+                        <th><h6><b>团队名称</b></h6></th>
+                        <th><h6><b>具体活动</b></h6></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="grp:${events}">
+                        <td th:text="${grp.getGroupname()}"></td>
+                        <td th:text="${grp.getEvents()}"></td>
+                    </tr>
+                    <h6 style="color: blue">以下为所有活动的具体信息</h6>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js"></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+
+</html>
+

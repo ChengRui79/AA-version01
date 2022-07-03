@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=""/>
+    <script>
+        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+
+<!--    <link th:href="@{css2/style.css}" rel='stylesheet' type='text/css' media="all">-->
+    <link href="/css2/style.css" rel='stylesheet' type='text/css' media="all">
+
+</head>
+<body>
+<div class="mid-class">
+<!--    <div id="form_text" class="col-md-4">-->
+    <div class="art-right-w3ls " style="text-align: center">
+        <center>
+            <font color="black" size="5.5px"><b>用 户 登 录</b></font>
+        </center>
+        <form th:action="@{/user/login}" method="post" class="signin-form"role="form" >
+
+            <p style="color: red" th:text="${msg1}" th:if="${not #strings.isEmpty(msg1)}"></p>
+            <p style="color: red" th:text="${msg2}" th:if="${not #strings.isEmpty(msg2)}"></p>
+
+            <div class="main">
+                <div class="form-left-to-w3l">
+                    <input type="text" name="username" id="username"placeholder="用户名" required>
+                </div>
+                <div class="form-left-to-w3l ">
+                    <input type="password" name="password" id="password"placeholder="密码" required>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="left-side-forget">
+                <input type="checkbox" class="checked">
+                <span class="remenber-me" style="color: black">记住我 </span>
+            </div>
+            <div class="right-side-forget">
+                <a href="#" class="for" style="color: black">忘记密码？</a>
+            </div>
+            <div class="clear"></div>
+            <div class="btnn">
+                <button class="btn theme-button" type="submit" id = "login" >登录</button>
+            </div>
+        </form>
+
+        <div class="w3layouts_more-button">
+            <h3>没有账号?
+                <a href="#content1">点击注册</a>
+            </h3>
+        </div>
+        <!-- popup-->
+        <div id="content1" class="popup-effect">
+            <div class="popup">
+                <!--login form-->
+                <div class="letter-w3ls">
+                    <form th:action="@{/registeUser}" method="post">
+                        <div class="form-left-to-w3l">
+                            <input type="text" name="rename" placeholder="用户名" id="rename" required>
+                        </div>
+                        <div class="form-left-to-w3l">
+                            <input type="password" name="repassword" id="repassword" placeholder="密码" required>
+                        </div>
+                        <div class="form-left-to-w3l margin-zero">
+                            <input type="password" name="rerepassword" id="rerepassword" placeholder="确认密码" required>
+                        </div>
+                        <div class="btnn">
+                            <button class="btn theme-button" type="submit" id = "sign" >注册</button>
+                            <br>
+                        </div>
+                    </form>
+                    <div class="clear"></div>
+                </div>
+                <!--login form-->
+                <a class="close" href="#">&times;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bottem-wthree-footer">
+    <p style="color: black">@sk拼团AA小实践.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<!--    <link rel="stylesheet" th:href="@{css3/bootstrap.min.css}">-->
+    <link rel="stylesheet" th:href="@{css3/style.css}">
+    <title>缴费界面</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{common/common::topbar}"></div>
+
+<div class="container" style="margin-left: 550px">
+    <div class="row">
+        <div th:replace="~{common/common::sidebar(active='pay.html')}"></div>
+
+        <div class="container_logo">
+            <div class="play col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-left: 200px">
+                <img th:src="@{images3/logo3.png}" />
+            </div>
+        </div>
+    </div>
+    <form th:action="@{/pay}" method="post">
+        <div class="row">
+            <div class="play col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <div class="form-group">
+                    <input type="hidden" class="getId" name="id">
+                    <font color="black" size="5px" ><b>充值缴费</b></font>
+                    <font color="black" size="2.5px" style="color: red"><b>(也可以为其他用户缴费)</b></font><br><br>
+                    <b>用户名：</b><input type="text" style="width: 830px;height: 40px" name="uname" required><br><br>
+                    <b>团队名：</b><input type="" style="width: 830px;height: 40px" name="grpname" required><br><br>
+                    <div class="number_amount">
+                        <label>￥</label>
+                        <input type="number" name="amount" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="quick_amount col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-item='100'>100</p>
+                <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-item='200'>200</p>
+                <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-item='500'>500</p>
+                <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-item='1000'>1000</p>
+                <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-item='2000'>2000</p>
+                <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-item='5000'>5000</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="_submit col-xs-10 col-sm-10 col-md-10 col-lg-10">
+<!--                <input type="submit" value="充值" class="btn btn-primary submit-amount">-->
+                <button type="submit" class="btn btn-sm btn-primary submit-amount" style="height: 35px" >充值</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id='exampleModal'>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>输入金额不能超出5000元</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask"></div>
+
+<script th:src="@{js3/jquery.min.js}"></script>
+<script th:src="@{js3/bootstrap.min.js}"></script>
+<script>
+    var $amountInput = $('[type="number"]');
+    var amount = '';
+    var $getId = $('[type="hidden"]');
+    var getparse=ParaMeter();
+    $getId.val(getparse.id);
+    $(".quick_amount p").off("click").on("click", function () {
+        amount = $(this).text();
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active').siblings().removeClass('active');
+            $amountInput.val(amount);
+        } else {
+            $(this).removeClass('active');
+            $amountInput.val('');
+        }
+    })
+    $amountInput.on('input propertychange', function () {
+        if ($(this).val() > 5000) {
+            $('#exampleModal').modal('show')
+        }
+        if($(this).val()!==$('.quick_amount p.active').text()){
+            $('.quick_amount p').removeClass('active');
+        }
+    })
+    $('#exampleModal').on('hidden.bs.modal', function (e) {
+        $amountInput.val(5000);
+    })
+    function ParaMeter()
+    {
+        var obj={};
+        var arr=location.href.substring(location.href.lastIndexOf('?')+1).split("&");
+        for(var i=0;i < arr.length;i++){
+            var aa=arr[i].split("=");
+            obj[aa[0]]=aa[1];
+        }
+        return obj;
+    }
+</script>
+
+</body>
+</html>

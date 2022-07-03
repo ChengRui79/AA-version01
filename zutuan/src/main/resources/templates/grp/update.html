@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>修改信息</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div th:replace="~{common/common::topbar}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{common/common::sidebar(active='organize.html')}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <h2 class="" style="color:black">正在修改</h2>
+            <form th:action="@{/updateGrp}" method="post">
+                <input type="hidden" name="id" th:value="${grp.getGroupid()}">
+                <div class="form-group">
+                    <label>Group ID</label>
+                    <input th:value="${grp.getGroupid()}"type="text" name="groupid" class="form-control" placeholder="Your Group id">
+                </div>
+                <div class="form-group">
+                    <label>Group Name</label>
+                    <input th:value="${grp.getGroupname()}"type="text" name="groupname" class="form-control" placeholder="Your Group name">
+                </div>
+                <div class="form-group">
+                    <label>Group Location</label>
+                    <input th:value="${grp.getGrouplocation()}"type="text" name="grouplocation" class="form-control" placeholder="Your Group location">
+                </div>
+
+                <button type="submit" class="btn btn-primary">修改</button>
+            </form>
+        </main>
+    </div>
+</div>
+
+
+</body>
+</html>

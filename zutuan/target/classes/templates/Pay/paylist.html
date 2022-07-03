@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>缴费列表</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--<div th:insert="~{welcome::topbar}"></div>-->
+<div th:replace="~{common/common::topbar}"></div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!--        <div th:insert="~{welcome::sidebar}"></div>-->
+        <div th:replace="~{common/common::sidebar(active='pay.html')}"></div>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" >
+                <font color="black" size="5px" ><center><b>缴费列表</b></center></font>
+                <h6><a class="" th:href="@{/costlist/export}" ><b>下载活动账单</b></a></h6>
+                <div class="table-responsive">
+                    <table class="table table-striped table-responsive-lg">
+                        <thead>
+                        <tr>
+                            <th><h6><b>用户名</b></h6></th>
+                            <th><h6><b>团队名</b></h6></th>
+                            <th><h6><b>金&nbsp;&nbsp;&nbsp;额</b></h6></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="cost:${pay}">
+                            <td th:text="${cost.getUname()}"></td>
+                            <td th:text="${cost.getGrpname()}"></td>
+                            <td th:text="${cost.getAmount()}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js"></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+
+</html>
+

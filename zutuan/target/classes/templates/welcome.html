@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>旅游拼团首页</title>
+<!--    <link href="/css4/bootstrap.css" rel="stylesheet" type="text/css" media="all" />-->
+<!--    <link href="/css4/style.css" rel="stylesheet" type="text/css" media="all" />-->
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+    <style>
+        h3{
+            color: red;
+        }
+        h4{
+            color: #00a1ff;
+        }
+        h5{
+            color: darkmagenta ;
+        }
+    </style>
+</head>
+
+<body >
+<!--顶部导航栏-->
+<div th:replace="~{common/common::topbar}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <!--侧边栏-->
+        <!--传递参数给组件-->
+        <div th:replace="~{common/common::sidebar(active='welcome.html')}"></div>
+
+
+        <!--main.html-->
+        <div class="container">
+            <div class="donate" style="margin-left: 330px">
+                <div class="donate-grid">
+                    <font color="black" size="5px" style="margin-left: 1000px"><b><br>欢迎登录我们的拼团 AA平台，希望在这里你们将发现令您满意的AA小团队，下面为您简要介绍我们的主要旅游景点，及其相应AA小团</b></font>
+                </div>
+                <div class="sit-in">
+                    <div class="col-md-12 ad-in">
+                        <h3><b>周庄古镇——美好旅行社</b></h3>
+                        <h5><b>周庄古镇位于苏州城东南，昆山、吴江、上海三地交界处，是世界文化遗产预选地、首批国家5A级旅游景区。周庄古镇四面环水，因河成镇，依水成街，以街为市。主要景点有富安桥、双桥、沈厅等。井字型河道上完好保存着14座建于元、明、清各代的古石桥。800多户原住民枕河而居，60%以上的民居依旧保存着明清时期的建筑风貌。</b></h5>
+                        <br>
+
+                    </div>
+                    <div class="col-md-12 ad-in">
+                        <h3><b>拙政园——好路线旅行社</b></h3>
+                        <h5><b>拙政园，位于江苏省苏州市，始建于明正德初年（16世纪初），是江南古典园林的代表作品。距今（2022年）已有500多年的历史。拙政园几度分合，或为“私人”宅园，或做“金屋”藏娇，或是“王府”治所，留下了许多诱人探寻的遗迹和典故。拙政园与北京颐和园、承德避暑山庄、苏州留园一起被誉为中国四大名园。</b></h5>
+                        <br>
+
+                    </div>
+                    <div class="col-md-12 ad-in">
+                        <h3><b>环秀山庄——心航旅行社</b></h3>
+                        <h5><b>环秀山庄，位于江苏省苏州市姑苏区景德路272号。原为五代钱氏金谷园故址，几经易手，多次扩建，清道光二十九年（1847年）更名环秀山庄，又名颐园。
+                            环秀山庄整体布局以假山为主，水池为辅，山水相依，庄园虽小，却极有气势。  环秀山庄以假山堆叠奇巧著称，被誉称“苏州三绝”之一，又被誉为“独步征轲”。  </b></h5>
+                        <br>
+                        <
+                    </div>
+                    <div class="col-md-12 ad-in">
+                        <h3><b>西山雕花楼——好望角旅行社</b></h3>
+                        <h5><b>西山雕花楼位于西山镇的堂里村，古时候的江南运输多半是靠水运，而堂里则是有四通八达“活水”码头。西山雕花楼的原名是“仁本堂”，取自“以仁为本、礼为教本”的意思。西山雕花楼占地约3亩，曾有五进七落七天井，始建于清康熙年间堪称西山最显赫的大户人家。雕花楼是徐氏后人在康熙、乾隆、咸丰、道光四个朝代中，陆陆续续的添砖加瓦、慢慢的修建而成的。 </b></h5>
+                        <br>
+
+                    </div>
+                    <div class="col-md-12 ad-in">
+                        <h3><b>苏州博物馆——随心乐程旅行社</b></h3>
+                        <h5><b>苏州博物馆成立于1960年，馆址太平天国忠王府，是国内保存完整的太平天国历史建筑物。1999年苏州市委、市政府邀请世界华人建筑师贝聿铭设计苏州博物馆新馆。2006年10月6日，苏州博物馆新馆建成并正式对外开放。新馆占地面积约10700平方米，建筑面积19000余平方米，加上修葺的太平天国忠王府，总建筑面积达26500平方米，投资达3.39亿元，是一座集现代化馆舍建筑、古建筑与创新山水园林三位一体的综合性博物馆。 </b></h5>
+                        <br>
+
+                    </div>
+                    <div class="col-md-12 ad-in">
+                        <h3><b>白塘公园——云侨旅行社</b></h3>
+                        <h5><b>苏州白塘公园位于苏州工业园区现代大道中段的北部，与金鸡湖、沙湖互成犄角，总占地面积约60．5公顷，其中水面面积约90公顷。该园的设计方案出自荷兰著名景观设计公司NITA景观设计院。 </b></h5>
+                        <br>
+
+                    </div>
+
+
+                    <div class="col-md-12 ad-in">
+                        <h4><b>••••••<br><br></b></h4>
+                    </div>
+
+                    <div class="col-md-12 ad-in">
+                        <h4><b>我们期待您的加入！</b></h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js" ></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js" ></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js" ></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js" ></script>
+<script>
+    feather.replace()
+</script>
+
+</body>
+
+</html>
